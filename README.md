@@ -1,5 +1,7 @@
 # IRIS Explorer
 
+This App demo the InterSystms IRIS REST API discovery and API generation (IRIS version 2019.1).
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 
 ## Development server
