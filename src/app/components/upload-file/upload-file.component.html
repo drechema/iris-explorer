@@ -1,0 +1,8 @@
+<form [formGroup]="form">
+    <div class="form-group form-inline">
+        <label class="btn btn-secondary">
+            <span class="fa fa-upload" style="padding-right:5px;"></span>
+            {{caption}} <input type="file" id="file" (change)="onFileChange($event)" style="display:none;">
+        </label>
+    </div>
+</form>

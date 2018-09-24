@@ -1,0 +1,7 @@
+<div *ngIf="message" class="">
+    <div [ngClass]="{'alert': message,
+                         'alert-success': message.type === 'success',
+                         'alert-danger': message.type === 'error' }">{{message.text}}
+        <button type="button" class="close btn fa fa-remove" (click)="dismiss()"></button>
+    </div>
+</div>

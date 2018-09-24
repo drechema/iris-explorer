@@ -1,0 +1,93 @@
+<form class="form-horizontal" *ngIf="!apis && show==='auth'" [formGroup]="authForm" (ngSubmit)="authChanges()">
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label for="username" class="control-label">Username</label>
+            <input type="text" class="form-control" name="username" formControlName="Username" autocomplete="username">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="password" class="control-label">Password</label>
+            <input type="password" class="form-control" name="password" formControlName="Password" autocomplete="current-password">
+        </div>
+        <div class="form-group col-md-4">
+            <div style="padding-top:30px">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+<div *ngIf="apis">
+    <div id="apiList" *ngIf="show==='list'" class="row">
+        <div class="col-md-12">
+            <div class="card border-secondary mb-3">
+                <div class="card-header">
+                    <h4>
+                        <span style="font-weight:bold">REST APIs</span>
+                        <span *ngIf="apis!=null">- Found {{apis.length}} items</span>
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <span *ngIf="loading" class="fa fa-spinner fa-spin fa-3x fa-fw"></span>
+                    <div class="row" *ngIf="!loading">
+                        <div class="col-md-12">
+                            <table class="table table-responsive table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>End Point</th>
+                                        <th>App Name</th>
+                                        <th>Dispatch Class</th>
+                                        <th>Namespace</th>
+                                        <th>Specification</th>
+                                        <th>Resource</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let api of apis;">
+                                        <td>
+                                            <button class="btn btn-link">
+                                                {{api.webApplications}}
+                                            </button>
+                                        </td>
+                                        <td><span>{{api.name}}</span></td>
+                                        <td><span>{{api.dispatchClass}}</span></td>
+                                        <td><span>{{api.namespace}}</span></td>
+                                        <td>
+                                            <button class="btn btn-link" (click)="startViewSpecification(api)">
+                                                {{api.swaggerSpec}}
+                                            </button>
+                                        </td>
+                                        <td><span>{{api.resource}}</span></td>
+                                        <td>
+                                            <button *ngIf="api.namespace!='%SYS'" class="btn btn-danger" (click)="delete(api)">
+                                                <i class="fa fa-trash"></i>
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="apiButtonBar" *ngIf="show==='list'" class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-info" (click)="refresh()">
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+                Refresh
+            </button>
+            <button type="button" class="btn btn-primary" (click)="startCreate()">
+                <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                New Application
+            </button>
+        </div>
+    </div>
+    <div id="apiCreate" *ngIf="show==='create'">
+        <app-iris-api-create (apiCreated)="endCreate($event)"></app-iris-api-create>
+    </div>
+    <div id="apiSpecification" *ngIf="show==='spec'">
+        <app-iris-api-spec [api]="currentApi" (viewEnded)="endViewSpecification($event)"></app-iris-api-spec>
+    </div>
+</div>

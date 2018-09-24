@@ -1,0 +1,17 @@
+.table th {
+    text-align: left;
+}
+.table td {
+    text-align: left;
+}
+.table-hover tbody tr:hover td {
+    background-color: #ffffcc;
+}
+.app-disabled {
+    color: gray;
+    text-decoration: line-through;
+}
+.btn-link {
+    text-align: left;
+    padding: 0 0 0 0;
+}
