@@ -1,0 +1,17 @@
+version: '3.6'
+services:
+  web:
+    build: .
+    hostname: localhost
+    image: iris-explorer:v1.0.0
+    container_name: iris-explorer
+    ports:
+      - 80:80
+  iris:
+    hostname: localhost
+    image: docker.iscinternal.com/intersystems/iris:2019.1.0.284.0
+    volumes:
+      - ${PWD}/shared/:/shared
+    command: --key /shared/license.key
+    ports:
+      - 52773:52773
