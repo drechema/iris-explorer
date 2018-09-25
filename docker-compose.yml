@@ -4,14 +4,15 @@ services:
     build: .
     hostname: localhost
     image: iris-explorer:v1.0.0
-    container_name: iris-explorer
+    container_name: iris-explorer_web
     ports:
       - 80:80
   iris:
     hostname: localhost
     image: docker.iscinternal.com/intersystems/iris:2019.1.0.284.0
+    command: --key /shared/license.key
+    container_name: iris-explorer_iris
     volumes:
       - ${PWD}/shared/:/shared
-    command: --key /shared/license.key
     ports:
       - 52773:52773
