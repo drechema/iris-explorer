@@ -1,8 +1,37 @@
 # IRIS Explorer
 
-This App demo the InterSystms IRIS REST API discovery and API generation (IRIS version 2019.1).
+This App demo the InterSystems IRIS REST API discovery and API generation (IRIS version 2019.1).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
+
+## Docker
+
+### Pre-requisites
+
+- You need a valid license for IRIS. Put it in `./shared` folder
+
+### Docker Compose
+
+The project come ready to run on Docker. You have only to execute:
+
+```bash
+docker-compose up -d
+```
+
+This command starts two docker compose services:
+
+- iris-explorer_web [the angular app deployed in a NGIX web server]
+- iris-exploreer_iris [iris 2019.1]
+
+When you have everything up you need to start session in IRIS <http://localhost:52773/csp/sys/%25CSP.Portal.Home.zen> and change the login password. Once you change the password you can access to the Angular app <http://localhost/home> and start exploring IRIS APIs using the user and password you used before
+
+When you finish your demo then execute:
+
+```bash
+docker-compose down
+```
+
+and everything stop smooth
 
 ## Development server
 
@@ -26,4 +55,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Email me :-) or add a Github issue
