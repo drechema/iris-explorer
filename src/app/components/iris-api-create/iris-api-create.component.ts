@@ -36,6 +36,7 @@ export class IrisApiCreateComponent implements OnInit {
   }
 
   create() {
+    this.alertService.clean();
     const namespace = this.form.controls['Namespace'].value;
     const appName = this.form.controls['ApplicationName'].value;
     let swagger;

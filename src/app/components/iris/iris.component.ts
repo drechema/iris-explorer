@@ -33,6 +33,7 @@ export class IrisComponent implements OnInit {
     }
 
     loadAPIs() {
+        this.alertService.clean();
         this.loading = true;
         this.apiService.getAll()
             .then(rsp => {
@@ -58,6 +59,7 @@ export class IrisComponent implements OnInit {
     }
 
     startCreate() {
+        this.alertService.clean();
         this.show = 'create';
     }
 
@@ -69,6 +71,7 @@ export class IrisComponent implements OnInit {
     }
 
     startViewSpecification(api: Api) {
+        this.alertService.clean();
         this.currentApi = api;
         this.show = 'spec';
     }
@@ -78,6 +81,7 @@ export class IrisComponent implements OnInit {
     }
 
     delete(api: Api) {
+        this.alertService.clean();
         if (confirm('Confirm you want to delete the API')) {
             this.loading = true;
             this.apiService.delete(api.namespace, api.name)
