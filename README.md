@@ -43,6 +43,8 @@ The application support i18n translations in order to run with another language 
 ng serve --aot --i18nFile=src/locale/messages.es.xlf --i18nFormat=xlf --locale=es
 ```
 
+More help about how to configure i18n here [https://v5.angular.io/guide/i18n]
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
