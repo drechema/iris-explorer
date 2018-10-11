@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="0639c8faa05bf740b4c8e05ae13e119464e47aa1" datatype="html">
+        <source>This App demo the IRIS REST API discovery and generation</source>
+        <target>Esta aplicación demuestra la funcionalidad de descubrimiento y generación de API REST en IRIS</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/about/about.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">app-description-summary</note>
+      </trans-unit>
+      <trans-unit id="efa5fe76cee0a387ba193b3f5008467c40fe7dd6" datatype="html">
+        <source>This Angular App uses Bootstrap and Font Awesome. It was generated with Angular CLI.</source>
+        <target>Esta aplicación Angular utiliza Bootstrap y FontAwesome. Ha sido generada con Angular CLI.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/about/about.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">app-description-technical</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

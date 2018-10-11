@@ -37,6 +37,12 @@ and everything stop smooth
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+The application support i18n translations in order to run with another language run:
+
+```bash
+ng serve --aot --i18nFile=src/locale/messages.es.xlf --i18nFormat=xlf --locale=es
+```
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
