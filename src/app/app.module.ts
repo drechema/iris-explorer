@@ -17,6 +17,9 @@ import { AlertComponent } from './components/alert/alert.component';
 import { IrisApiCreateComponent } from './components/iris-api-create/iris-api-create.component';
 import { IrisApiSpecComponent } from './components/iris-api-spec/iris-api-spec.component';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
+import { SwaggerComponent } from './components/swagger/swagger.component';
+
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { UploadFileComponent } from './components/upload-file/upload-file.compon
     AlertComponent,
     IrisApiCreateComponent,
     IrisApiSpecComponent,
-    UploadFileComponent
+    UploadFileComponent,
+    SwaggerComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,8 @@ import { UploadFileComponent } from './components/upload-file/upload-file.compon
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'about', component: AboutComponent },
       { path: 'home', component: HomeComponent }
-    ])
+    ]),
+    TabsModule.forRoot(),
   ],
   providers: [
     IrisApiService,

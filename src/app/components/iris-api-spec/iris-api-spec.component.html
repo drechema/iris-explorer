@@ -1,12 +1,25 @@
 <div class="row">
   <div class="form-group col-md-12">
-      <button type="button" class="btn btn-danger" (click)="cancel()">Return</button>
-      <button type="button" class="btn btn-secondary" (click)="copyToClipboard()">Copy To Clipboard</button>
-      <button type="button" class="btn btn-info" (click)="download()">Download</button>
-    </div>
-</div>
-<div class="row">
-  <div class="form-group col-md-12">
-    <textarea class="form-control" name="specification" rows="20" #myInput>{{specification}}</textarea>
+    <button type="button" class="btn btn-danger" (click)="cancel()">Return</button>
   </div>
+</div>
+<div>
+  <tabset>
+    <tab heading="Swagger UI" id="tab1">
+        <app-swagger [swaggerSpec]="swaggerSpec"></app-swagger>
+    </tab>
+    <tab heading="OAS Specification">
+        <div class="row" style="padding-top: 10px">
+            <div class="form-group col-md-12">
+              <button type="button" class="btn btn-secondary" (click)="copyToClipboard()">Copy To Clipboard</button>
+              <button type="button" class="btn btn-info" (click)="download()">Download</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-12">
+              <textarea class="form-control" name="specification" rows="20" #myInput>{{swaggerString}}</textarea>
+            </div>
+          </div>
+    </tab>
+  </tabset>
 </div>

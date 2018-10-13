@@ -12,7 +12,8 @@ export class IrisApiSpecComponent implements OnInit, OnChanges {
   @Input() api: Api;
   @Output() viewEnded = new EventEmitter<Api>();
   public loading = false;
-  public specification: string;
+  public swaggerSpec: any;
+  public swaggerString: string;
   @ViewChild('myInput', { read: ViewContainerRef }) myInput;
 
   constructor(
@@ -33,7 +34,8 @@ export class IrisApiSpecComponent implements OnInit, OnChanges {
     this.loading = true;
     this.apiService.getSpecification(this.api.namespace, this.api.name)
       .then(rsp => {
-        this.specification = JSON.stringify(rsp).trim();
+        this.swaggerSpec = rsp;
+        this.swaggerString = JSON.stringify(rsp).trim();
         this.loading = false;
       })
       .catch(error => {
@@ -53,7 +55,7 @@ export class IrisApiSpecComponent implements OnInit, OnChanges {
   }
 
   download() {
-    this.saveToFile(this.api.name + '.swagger.json', this.specification);
+    this.saveToFile(this.api.name + '.swagger.json', this.swaggerString);
   }
 
   saveToFile(filename, text) {
