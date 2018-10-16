@@ -1,10 +1,12 @@
 # IRIS Explorer
 
-This App demo the InterSystems IRIS REST API discovery and API generation (IRIS version 2019.1).
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
+This App demo the InterSystems IRIS REST API discovery and API generation (InterSystems IRIS version 2019.1).
+There is a nice article explaining the background at InterSystems Developer Community:
+(https://community.intersystems.com/post/iris-api-explorer-application)
 
 ## Docker
+
+In order to run this app easier I prepared a Docker container for a quick start
 
 ### Pre-requisites
 
@@ -46,6 +48,7 @@ ng serve --aot --i18nFile=src/locale/messages.es.xlf --i18nFormat=xlf --locale=e
 More help about how to configure i18n here [<https://v5.angular.io/guide/i18n>]
 
 ## Code scaffolding
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6. Using Angular 5.
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
