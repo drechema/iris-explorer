@@ -2,7 +2,7 @@
 
 This App demo the InterSystems IRIS REST API discovery and API generation (InterSystems IRIS version 2019.1).
 There is a nice article explaining the background at InterSystems Developer Community:
-(https://community.intersystems.com/post/iris-api-explorer-application)
+<https://community.intersystems.com/post/iris-api-explorer-application>
 
 ## Docker
 
