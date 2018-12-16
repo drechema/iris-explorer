@@ -1,0 +1,9 @@
+	if (id=1){
+		do ..%SetContentType("application/json")
+		set tObj = {"id":1,"address":{"street":"avenida andalucia", "city":"sevilla"}}
+		do ..%SetStatusCode(200)
+		quit tObj
+	} else {
+		do ..%SetStatusCode(404)
+		quit "NOT FOUND"
+	}

@@ -1,0 +1,115 @@
+{
+  "info": {
+    "title": "PhoneApp",
+    "description": "REST API for demo Phone Market Angular application",
+    "version": "1.0"
+  },
+  "basePath": "/phoneapp/api",
+  "paths": {
+    "/test": {
+      "get": {
+        "summary": "Do a simple test",
+        "operationId": "test",
+        "responses": {
+          "200": {
+            "description": "Test if the system is working"
+          },
+          "default": {
+            "description": "Returns a phone object"
+          }
+        }
+      }
+    },
+    "/phones": {
+      "get": {
+        "summary": "Returns all the phones in the database",
+        "operationId": "getPhones",
+        "responses": {
+          "200": {
+            "description": "The list of phones objects in the database"
+          },
+          "default": {
+            "description": "(Unexpected Error)"
+          }
+        }
+      }
+    },
+    "/phones/{id}": {
+      "get": {
+        "summary": "Retrieve the Phone object with id = {id}",
+        "operationId": "getPhone",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "(Expected Result)"
+          },
+          "default": {
+            "description": "(Unexpected Error)"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update the Phone object with id = {id}",
+        "operationId": "putPhone",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "(Expected Result)"
+          },
+          "default": {
+            "description": "(Unexpected Error)"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete the Phone object with id = {id}",
+        "operationId": "deletePhone",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "(Expected Result)"
+          },
+          "default": {
+            "description": "(Unexpected Error)"
+          }
+        }
+      }
+    },
+    "/phones/new": {
+      "post": {
+        "summary": "Creates a new Phone object",
+        "operationId": "postPhone",
+        "responses": {
+          "200": {
+            "description": "(Expected Result)"
+          },
+          "default": {
+            "description": "(Unexpected Error)"
+          }
+        }
+      }
+    }
+  },
+  "swagger": "2.0"
+}

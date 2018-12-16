@@ -12,7 +12,13 @@ export class IrisApiService {
     private options: RequestOptions;
 
     constructor(private http: Http) {
-        this.url = 'http://localhost:52773/api/mgmnt';
+        // by default
+        this.url = '';
+    }
+
+    // Set the host & port
+    public setURL(host: string, port: string) {
+        this.url = 'http://' + host + ':' + port + '/api/mgmnt';
     }
 
     // Set the Request Headers

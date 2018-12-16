@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="IRIS for Windows (x86-64) 2018.2.0RET (Build 424U)" ts="2018-01-24 19:41:18">
+<Class name="demo.phones.phone">
+<Super>%Persistent</Super>
+<TimeChanged>64671,61183.799829</TimeChanged>
+<TimeCreated>63994,65812.192233</TimeCreated>
+
+<Property name="manufacturer">
+<Description><![CDATA[
+this class holds phone data for demo phonemarketapp AngularJS application (WITS2016)
+
+Invoke:
+do ##class(demo.phones.phone).CreateData()
+to import phone data *after* you have completed prerequisites described in 
+demo.phones.reserver class.
+Then run app in browser: http://localhost:<port>/phoneapp/index.html
+Enjoy! :)
+]]></Description>
+<Type>%String</Type>
+</Property>
+
+<Property name="model">
+<Type>%String</Type>
+</Property>
+
+<Property name="resolution">
+<Type>%String</Type>
+</Property>
+
+<Property name="cpu">
+<Type>%String</Type>
+</Property>
+
+<Property name="cputype">
+<Type>%String</Type>
+</Property>
+
+<Property name="ram">
+<Type>%String</Type>
+</Property>
+
+<Property name="battery">
+<Type>%String</Type>
+</Property>
+
+<Property name="dimensions">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="256"/>
+</Property>
+
+<Property name="os">
+<Type>%String</Type>
+</Property>
+
+<Property name="released">
+<Type>%String</Type>
+</Property>
+
+<Property name="img">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="256"/>
+</Property>
+
+<Property name="price">
+<Type>%String</Type>
+</Property>
+
+<Property name="phoneID">
+<Type>%Integer</Type>
+<Calculated>1</Calculated>
+<SqlComputeCode>Set {*} = {ID} </SqlComputeCode>
+<SqlComputed>1</SqlComputed>
+</Property>
+
+<Method name="DummyData">
+<ClassMethod>1</ClassMethod>
+<Private>1</Private>
+<ReturnType>%DynamicArray</ReturnType>
+<Implementation><![CDATA[
+	Quit [
+	  {
+	    "manufacturer":"Sony",
+	    "model":"Xperia Z3",
+	    "resolution":"1920x1080",
+	    "cpu":"Qualcomm Snapdragon 801 MSM8974AC",
+	    "cputype":"Quad-Core",
+	    "ram":"3 GByte",
+	    "battery":"3.100mAh",
+	    "dimensions":"146 x 72 x 7.3 mm",
+	    "os":"Android Version: 5.1.1 Lollipop",
+	    "released":"09/2014",
+	    "img":"",
+		"price":""
+	  },
+	  {
+	    "manufacturer":"Sony",
+	    "model":"Xperia Z2",
+	    "resolution":"1920x1080",
+	    "cpu":"Qualcomm MSM8974AB Snapdragon 800",
+	    "cputype":"Quad-Core",
+	    "ram":"3 GByte",
+	    "battery":"3.200mAh",
+	    "dimensions":"146.8 x 73.3 x 8.2 mm",
+	    "os":"Android Version: 5.0.2 Lollipop",
+	    "released":"04/2014",
+	    "img":"",
+		"price":""
+	  },
+	  {
+	    "manufacturer":"Apple",
+	    "model":"iPhone 6",
+	    "resolution":"1334x750",
+	    "cpu":"Apple A8 64-Bit M8 Motion Cop",
+	    "cputype":"Dual-Core",
+	    "ram":"1 GByte",
+	    "battery":"1.810mAh",
+	    "dimensions":"138.1 x 67 x 6.9 mm",
+	    "os":"iOS Version: 8.4",
+	    "released":"09/2014",
+	    "img":"",
+		"price":""
+	  },
+	  {
+	    "manufacturer":"Apple",
+	    "model":"iPhone 6s plus",
+	    "resolution":"1920x1080",
+	    "cpu":"Apple A9 64-Bit",
+	    "cputype":"Dual-Core",
+	    "ram":"2 GByte",
+	    "battery":"2.750mAh",
+	    "dimensions":"158.2 x 77.9 x 7.3 mm",
+	    "os":"iOS Version: 9",
+	    "released":"09/2015",
+	    "img":"",
+		"price":""
+	  },
+	  {
+	    "manufacturer":"Google",
+	    "model":"Nexus 6",
+	    "resolution":"2560x1440",
+	    "cpu":"Qualcomm Snapdragon 805 32-Bit",
+	    "cputype":"Quad-Core",
+	    "ram":"3 GByte",
+	    "battery":"3.220mAh",
+	    "dimensions":"159.26 x 82.98 x 10.06 mm",
+	    "os":"Android Version: 5.1 Lollipop",
+	    "released":"11/2014",
+	    "img":"",
+		"price":""
+	  },
+	  {
+	    "manufacturer":"HTC",
+	    "model":"One (M8)",
+	    "resolution":"1920x1080",
+	    "cpu":"Qualcomm Snapdragon 801 32-Bit",
+	    "cputype":"Quad-Core",
+	    "ram":"2 GByte",
+	    "battery":"2.600mAh",
+	    "dimensions":"146.36 x 70.6 x 9.35 mm",
+	    "os":"Android Version: 5.0.1 Lollipop",
+	    "released":"04/2014",
+	    "img":"",
+		"price":""
+	  },
+	  {
+	    "manufacturer":"LG",
+	    "model":"G4",
+	    "resolution":"2560x1440",
+	    "cpu":"Qualcomm Adreno 418",
+	    "cputype":"Hexa-Core",
+	    "ram":"3 GByte",
+	    "battery":"3.000mAh",
+	    "dimensions":"148.9 x 76.1 x 10.7 mm",
+	    "os":"Android Version: 5.1 Lollipop",
+	    "released":"06/2015",
+	    "img":"",
+		"price":""
+	  },
+	  {
+	    "manufacturer":"Samsung",
+	    "model":"Galaxy S7 edge",
+	    "resolution":"2560x1440",
+	    "cpu":"Samsung Exynos 8890 64-Bit",
+	    "cputype":"Octa-Core",
+	    "ram":"4 GByte",
+	    "battery":"3.600mAh",
+	    "dimensions":"150.9 x 72.6 x 7.7 mm",
+	    "os":"Android Version: 6.0.1 Marshmallow",
+	    "released":"03/2016",
+	    "img":"",
+		"price":""
+	  },
+	  {
+	    "manufacturer":"Nokia",
+	    "model":"Lumia 930",
+	    "resolution":"1920x1080",
+	    "cpu":"Qualcomm Snapdragon 800 32-Bit",
+	    "cputype":"Quad-Core",
+	    "ram":"2 GByte",
+	    "battery":"2.420mAh",
+	    "dimensions":"137 x 71 x 10.5 mm",
+	    "os":"Windows Phone Version 8.1",
+	    "released":"06/2014",
+	    "img":"",
+		"price":""
+	  },
+	  {
+	    "manufacturer":"Samsung",
+	    "model":"Galaxy Note 4",
+	    "resolution":"2560x1440",
+	    "cpu":"Qualcomm Snapdragon 805 32-Bit",
+	    "cputype":"Quad-Core",
+	    "ram":"3 GByte",
+	    "battery":"3.220mAh",
+	    "dimensions":"153.5 x 78.6 x 8.5 mm",
+	    "os":"Android Version: 5.0.1 Lollipop",
+	    "released":"10/2014",
+	    "img":"",
+		"price":""
+	  },
+	  {
+	    "manufacturer":"Huawei",
+	    "model":"Mate 8",
+	    "resolution":"1920x1080",
+	    "cpu":"Kirin 950 64-Bit",
+	    "cputype":"Octa-Core",
+	    "ram":"3 GByte",
+	    "battery":"4.000mAh",
+	    "dimensions":"157.1 x 80.6 x 7.9 mm",
+	    "os":"Android Version: 6.0 Marshmallow",
+	    "released":"01/2015",
+	    "img":"",
+		"price":""
+	  },
+	  {
+	    "manufacturer":"Huawei",
+	    "model":"Honor 6",
+	    "resolution":"1920x1080",
+	    "cpu":"HiSilicon Kirin 920 32-Bit",
+	    "cputype":"Dual-Core",
+	    "ram":"3 GByte",
+	    "battery":"3.100mAh",
+	    "dimensions":"139.3 x 68.8 x 7.8 mm",
+	    "os":"Android Version: 4.4 KitKat",
+	    "released":"10/2014",
+	    "img":"",
+		"price":""
+	  },
+	  {
+	    "manufacturer":"LG",
+	    "model":"G3",
+	    "resolution":"2560x1440",
+	    "cpu":"Qualcomm Snapdragon 801 MSM8975AC 32-Bit",
+	    "cputype":"Quad-Core",
+	    "ram":"2 GByte",
+	    "battery":"3.000mAh",
+	    "dimensions":"146.3 x 74.6 x 8.95 mm",
+	    "os":"Android Version: 5.0.1 KitKat",
+	    "released":"07/2014",
+	    "img":"",
+		"price":""
+	  },
+	  {
+	    "manufacturer":"OnePlus",
+	    "model":"One",
+	    "resolution":"1920x1080",
+	    "cpu":"Qualcomm Snapdragon 801 MSM8974AC 32-Bit",
+	    "cputype":"Quad-Core",
+	    "ram":"3 GByte",
+	    "battery":"3.100mAh",
+	    "dimensions":"152.9 x 75.9 x 8.9 mm",
+	    "os":"Android Version 5.1 Lollipop / CyanogenOS 12",
+	    "released":"06/2014",
+	    "img":"",
+		"price":""
+	  },
+	  {
+	    "manufacturer":"Motorola",
+	    "model":"Moto X Play",
+	    "resolution":"1920x1080",
+	    "cpu":"Qualcomm Snapdragon 615 64-Bit",
+	    "cputype":"Octa-Core",
+	    "ram":"2 GByte",
+	    "battery":"3.630mAh",
+	    "dimensions":"148 x 75 x 10.9 mm",
+	    "os":"Android Version: 5.1.1 Lollipop",
+	    "released":"08/2015",
+	    "img":"",
+		"price":""
+	  }
+	]
+]]></Implementation>
+</Method>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Comentario
+
+]]></Content>
+</UDLText>
+
+<Method name="CreateData">
+<Description>
+Esto va a la doc
+do ##class(demo.phones.phone).CreateData()</Description>
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+	Set response = ..DummyData()
+	Quit:'$IsObject(response)
+	Quit:response.%Size()<1
+	
+	do ..%KillExtent()
+	
+	w !,"importing phones ...",!
+	
+	set obj={},ok=0,x=0
+ 
+	For i=1:1:response.%Size() {
+	  set obj=response.%Pop()
+	  Quit:'$IsObject(obj)
+	  
+	  set x=x+1
+	  w !,"phone "_x_" : "
+	  do obj.%ToJSON()
+	  
+	  set pO=##class(demo.phones.phone).%New()
+	  do ##class(demo.phones.phone).CopyFromJSON(.pO,obj)
+	  
+	  if $IsObject(pO) {
+		
+		//auto generated img filename if not given source-data
+		set pO.img="img/"_$zconvert($tr(pO.manufacturer_"_"_pO.model," ","_"),"L")_".jpg"  
+		
+		//auto generated price if not given in source-data
+		set price=$random(5)+1,pO.price=$s(price=1:"199.99",price=2:"299.99",price=3:"399.99",price=4:"499.99",1:"599.99")
+		
+		set sc=pO.%Save()
+		if $$$ISERR(sc) {
+			w !,$system.Status.GetOneErrorText(sc)
+		}
+		else  {
+			set ok=ok+1
+			w !,"phone Saved OK! (Id:"_pO.%Id()_")"
+		} 
+	  }
+	  
+	}
+	
+	w !!,"Import finished! ",ok,"/",x," phones saved!",!
+		
+	Quit
+]]></Implementation>
+</Method>
+
+<Method name="CopyFromJSON">
+<ClassMethod>1</ClassMethod>
+<FormalSpec><![CDATA[&p:demo.phones.phone,obj:%DynamicObject]]></FormalSpec>
+<Implementation><![CDATA[
+	Set p.model=obj.model
+	Set p.manufacturer=obj.manufacturer
+	Set p.cpu=obj.cpu
+	Set p.price=obj.price
+	Set p.img=obj.img
+	Set p.resolution=obj.resolution
+	Set p.cputype=obj.cputype
+	Set p.ram=obj.ram
+	Set p.battery=obj.battery
+	Set p.dimensions=obj.dimensions
+	Set p.os=obj.os
+	Set p.released=obj.released
+]]></Implementation>
+</Method>
+
+<Method name="ToJsonObject">
+<ReturnType>%DynamicObject</ReturnType>
+<Implementation><![CDATA[
+   quit {"id":(..%Id()),
+         "manufacturer":(..manufacturer),
+		 "model":(..model),
+		 "resolution":(..resolution),
+		 "cpu":(..cpu),
+		 "cputype":(..cputype),
+		 "ram":(..ram),
+		 "battery":(..battery),
+		 "dimensions":(..dimensions),
+		 "os":(..os),
+		 "released":(..released),
+		 "img":(..img),
+		 "price":(..price)}
+]]></Implementation>
+</Method>
+
+<Method name="ToJsonString">
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[	quit ..ToJsonObject().%ToJSON()
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^demo.phones.phoneD</DataLocation>
+<DefaultData>phoneDefaultData</DefaultData>
+<IdLocation>^demo.phones.phoneD</IdLocation>
+<IndexLocation>^demo.phones.phoneI</IndexLocation>
+<StreamLocation>^demo.phones.phoneS</StreamLocation>
+<Data name="phoneDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>manufacturer</Value>
+</Value>
+<Value name="3">
+<Value>model</Value>
+</Value>
+<Value name="4">
+<Value>resolution</Value>
+</Value>
+<Value name="5">
+<Value>cpu</Value>
+</Value>
+<Value name="6">
+<Value>cputype</Value>
+</Value>
+<Value name="7">
+<Value>ram</Value>
+</Value>
+<Value name="8">
+<Value>battery</Value>
+</Value>
+<Value name="9">
+<Value>dimensons</Value>
+</Value>
+<Value name="10">
+<Value>os</Value>
+</Value>
+<Value name="11">
+<Value>released</Value>
+</Value>
+<Value name="12">
+<Value>img</Value>
+</Value>
+<Value name="13">
+<Value>price</Value>
+</Value>
+<Value name="14">
+<Value>dimensions</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="demo.phones.restserver">
+<Super>%CSP.REST</Super>
+<TimeChanged>64672,69904.07236</TimeChanged>
+<TimeCreated>63994,65218.750118</TimeCreated>
+
+<Parameter name="HandleCorsRequest">
+<Description>
+This parameter influences the CORS support. The default is an empty string meaning 'not specified'.
+If set to true (1) then CORS processing is ON. If set to false (0) then CORS processing is OFF.
+If left unset ("") then the decision to process CORS is delegated to the setting on the URL map route.</Description>
+<Default>1</Default>
+</Parameter>
+
+<Parameter name="CONTENTTYPE">
+<Description><![CDATA[
+REST API for demo phonemarketapp AngularJS application (WITS2016)
+
+Prerequisites:
+------------
+Create new Web-App for Web-Application in SMP: /phoneapp
+Copy all the demo phoneapp files/folders into your Web-Apps /CSP/phoneapp physical folder.
+Create new Web-App for RESTAPI in SMP: /phoneapp/api -> Dispatcher class = demo.phones.restserver
+]]></Description>
+<Type>%String</Type>
+<Default>application/json</Default>
+</Parameter>
+
+<XData name="UrlMap">
+<XMLNamespace>http://www.intersystems.com/urlmap</XMLNamespace>
+<Data><![CDATA[
+<Routes>
+<Route Url="/test" Method="GET" Call="Test" />
+<Route Url="/phones" Method="GET" Call="GetAllPhones" />
+<Route Url="/phones/:id" Method="GET" Call="GetPhone" />
+<Route Url="/phones/new" Method="POST" Call="CreatePhone" />
+<Route Url="/phones/:id" Method="PUT" Call="UpdatePhone" />
+<Route Url="/phones/:id" Method="DELETE" Call="DeletePhone" />
+</Routes>
+]]></Data>
+</XData>
+
+<Method name="GetAllPhones">
+<Description>
+Write list of phones as JSON</Description>
+<ClassMethod>1</ClassMethod>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	set tArr = []
+	
+	&sql(DECLARE C1 CURSOR FOR SELECT ID INTO :id FROM demo_phones.phone)
+	&sql(OPEN C1)
+	&sql(FETCH C1)
+	while (SQLCODE = 0) {
+		set phObj = ##class(demo.phones.phone).%OpenId(id)
+		do tArr.%Push(phObj.ToJsonObject())
+		&sql(FETCH C1)
+	}
+	&sql(CLOSE C1)
+	
+	// Write to HTTP device
+	write tArr.%ToJSON()
+	
+	quit $$$OK
+]]></Implementation>
+</Method>
+
+<Method name="Test">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	set o={"manufacturer":"Apple","model":"iPhone 6 SE","price":123.45,"img":"/img/test-greenphone.png"}
+	w o.%ToJSON()
+	quit $$$OK
+]]></Implementation>
+</Method>
+
+<Method name="GetPhone">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>id:%String</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	set phObj = ##class(demo.phones.phone).%OpenId(id)
+	if '$IsObject(phObj) {
+		set %response.Status = ..#HTTP404NOTFOUND
+	} else {
+		write phObj.ToJsonString()
+	}
+	quit $$$OK
+]]></Implementation>
+</Method>
+
+<Method name="GetJSONFromRequest">
+<Description>
+Helper method</Description>
+<ClassMethod>1</ClassMethod>
+<FormalSpec>*obj:%DynamicObject</FormalSpec>
+<ReturnType>%Boolean</ReturnType>
+<Implementation><![CDATA[
+	Set ok = 1
+	Try {
+		Set obj = ##class(%DynamicObject).%FromJSON(%request.Content)
+	} Catch ex {
+		Set ok = 0
+	}
+	Quit ok
+]]></Implementation>
+</Method>
+
+<Method name="ValidateJSON">
+<Description>
+Helper method</Description>
+<ClassMethod>1</ClassMethod>
+<FormalSpec>obj:%DynamicObject,*error:%DynamicObject</FormalSpec>
+<ReturnType>%Boolean</ReturnType>
+<Implementation><![CDATA[
+	Set error = {}
+	
+	If obj.%Get("model") = "" {
+		Set error.errormessage = "Model was blank"
+		Quit 0
+	}	
+	
+	If obj.%Get("manufacturer") = "" {
+		Set error.errormessage = "Manufacturer was blank"
+		Quit 0
+	}
+	
+	Quit 1
+]]></Implementation>
+</Method>
+
+<Method name="CreatePhone">
+<Description>
+Takes JSON object from HTTP request and create the phone.
+Returns an error if the 'model' or 'manufacturer' fields are left blank.</Description>
+<ClassMethod>1</ClassMethod>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	If '..GetJSONFromRequest(.obj) {
+		Set %response.Status = ..#HTTP400BADREQUEST
+		Set error = {"errormessage": "JSON not found"}
+		Write error.%ToJSON()
+		Quit $$$OK
+	}
+	
+	If '..ValidateJSON(obj,.error) {
+		Set %response.Status = ..#HTTP400BADREQUEST
+		Write error.%ToJSON()
+		Quit $$$OK
+	}
+	
+	Set p = ##class(demo.phones.phone).%New()
+	Do ##class(demo.phones.phone).CopyFromJSON(.p,obj)
+	Set sc = p.%Save()
+	
+	Set result={}
+	do result.%Set("status",$s($$$ISERR(sc):$system.Status.GetOneErrorText(sc),1:"OK"))
+	write result.%ToJSON()
+	quit sc
+]]></Implementation>
+</Method>
+
+<Method name="UpdatePhone">
+<Description>
+Takes JSON object from HTTP request and updates the specified phone ID.
+Returns an error if the 'model' or 'manufacturer' fields are left blank.</Description>
+<ClassMethod>1</ClassMethod>
+<FormalSpec>id:%String=""</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	If '..GetJSONFromRequest(.obj) {
+		Set %response.Status = ..#HTTP400BADREQUEST
+		Set error = {"errormessage": "JSON not found"}
+		Write error.%ToJSON()
+		Quit $$$OK
+	}
+	
+	If '..ValidateJSON(obj,.error) {
+		Set %response.Status = ..#HTTP400BADREQUEST
+		Write error.%ToJSON()
+		Quit $$$OK
+	}
+	
+	Set p = ##class(demo.phones.phone).%OpenId(id)
+	If '$IsObject(p) {
+		Set %response.Status = ..#HTTP404NOTFOUND
+		Quit $$$OK
+	}
+	
+	Do ##class(demo.phones.phone).CopyFromJSON(.p,obj)
+	
+	Set sc = p.%Save()
+	
+	Set result={}
+	do result.%Set("Status",$s($$$ISERR(sc):$system.Status.GetErrorText(sc),1:"OK"))
+	write result.%ToJSON()
+	Quit sc
+]]></Implementation>
+</Method>
+
+<Method name="DeletePhone">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>id:%String=""</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	
+	Set result={}
+	Set sc=$$$OK
+	
+	if id'="",##class(demo.phones.phone).%ExistsId(id) {
+	  Set sc=##class(demo.phones.phone).%DeleteId(id)
+	  do result.%Set("Status",$s($$$ISERR(sc):$system.Status.GetErrorText(sc),1:"OK"))
+	}
+	else  {
+		set %response.Status = ..#HTTP404NOTFOUND
+		quit $$$OK
+	}
+	
+	write result.%ToJSON()
+  	quit sc
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="demo.setup">
+<Super>%RegisteredObject</Super>
+<TimeChanged>64672,70821.33613</TimeChanged>
+<TimeCreated>64009,36510.827059</TimeCreated>
+
+<Method name="setup">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>nsp:%String="DEMO",webapp:%String="/phoneapp"</FormalSpec>
+<Implementation><![CDATA[
+	Do ..createCspPhoneapp(nsp, webapp)
+	Do ..createCspPhoneappApi(nsp, webapp)
+	Do ##class(demo.phones.phone).CreateData()
+]]></Implementation>
+</Method>
+
+<Method name="createCspPhoneapp">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>nsp:%String="DEMO",webapp:%String="/phoneapp"</FormalSpec>
+<Private>1</Private>
+<Implementation><![CDATA[
+	Set oldNS = $namespace
+	Set $namespace = "%SYS"
+	#dim app as Security.Applications
+	Set app = ##class(Security.Applications).%New()
+	Set app.Name = webapp
+	Set app.NameSpace = nsp
+	Set app.Path = ##class(%File).NormalizeDirectory($zu(12)_"../csp"_webapp)
+	Set sc = app.%Save()
+	
+	Set $namespace = oldNS
+	Quit ''sc
+]]></Implementation>
+</Method>
+
+<Method name="createCspPhoneappApi">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>nsp:%String="DEMO",webapp:%String="/phoneapp"</FormalSpec>
+<Private>1</Private>
+<Implementation><![CDATA[
+	Set oldNS = $namespace
+	Set $namespace = "%SYS"
+	Set app = ##class(Security.Applications).%New()
+	Set app.Name = webapp_"/api"
+	Set app.NameSpace = nsp
+	Set app.DispatchClass = "demo.phones.restserver"
+	Set sc = app.%Save()
+	
+	Set $namespace = oldNS
+	Quit ''sc
+]]></Implementation>
+</Method>
+
+<Method name="reset">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>webapp:%String="/phoneapp"</FormalSpec>
+<Implementation><![CDATA[
+	Set oldNS = $namespace
+	Set $namespace = "%SYS"
+	Do ##class(Security.Applications).%DeleteId(webapp)
+	Do ##class(Security.Applications).%DeleteId(webapp_"/api")
+	Set $namespace = oldNS
+]]></Implementation>
+</Method>
+</Class>
+</Export>

@@ -1,0 +1,349 @@
+swagger: "2.0"
+info:
+  description: "REST API for ACME Notification application"
+  version: "1.0.0"
+  title: "ACME Notification API"
+basePath: "/acme/api/notification/v1"
+tags:
+- name: "account"
+  description: "An account represent the contract between the customer and ACME company. An account can have several users. An user can access to the Magnolia Portal and review the notified content."
+- name: "country"
+  description: "The country where a traveler user can travel, also any content is related to a specific country"
+- name: "content"
+  description: "Any content to be notified to an user. Could be a Warning, an Alert or a Report."
+- name: "audit"
+  description: "Represent the registry of notifications sended to any user. Each audit record have an status that represents if the user has read the notification."
+schemes:
+- "http"
+paths:
+  /accounts:
+    get:
+      tags:
+      - "account"
+      summary: "Get all accounts"
+      description: "Return all the accounts in the system"
+      operationId: "getAccounts"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Account"
+        400:
+          description: "Invalid status value"
+  /account/{accountId}:
+    get:
+      tags:
+      - "account"
+      summary: "Get account detail"
+      description: "Return the account detail including the list of users. if the user rol include 'traveler' then the user will have a trips list. If the user rol include 'manager' then the user will have a managedUsers list."
+      operationId: "getAccountDetail"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "accountId"
+        in: "path"
+        description: "ID of account that needs to be fetched"
+        required: true
+        type: "integer"
+        format: "int64"      
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/AccountDetail"
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Account not found"
+  /countries:
+    get:
+      tags:
+      - "country"
+      summary: "Get all countries"
+      description: "Return all the countries in the system"
+      operationId: "getCountries"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Country"
+        400:
+          description: "Invalid status value"
+  /content/{contentId}:
+    get:
+      tags:
+      - "content"
+      summary: "Get content detail"
+      description: "Return the content detail"
+      operationId: "getContentDetail"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "contentId"
+        in: "path"
+        description: "ID of content that needs to be fetched"
+        required: true
+        type: "integer"
+        format: "int64"      
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Content"
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Account not found"
+  /content/country/{countryId}:
+    get:
+      tags:
+      - "content"
+      summary: "Get content detail for a country"
+      description: "Returns the complete data of the new content to be notified of a specific country from the date and time indicated"
+      operationId: "getContentDetailByCountry"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "countryId"
+        in: "path"
+        description: "ID of the country from which we want to obtain its content"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "startDate"
+        in: "query"
+        description: "Date from we want to get the content"
+        required: true
+        type: "string"
+        format: "date"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Content"
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Account not found"
+  /audit:
+    post:
+      tags:
+      - "audit"
+      summary: "Place a notification audit for a content and user"
+      description: ""
+      operationId: "placeAudit"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "record placed for register inform the notification has done"
+        required: true
+        schema:
+          $ref: "#/definitions/Audit"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Audit"
+        400:
+          description: "Invalid Audit"
+  /audit/user/{userId}:
+    get:
+      tags:
+      - "audit"
+      summary: "Get list of audit records for a user"
+      description: ""
+      operationId: "getAuditByUser"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "userId"
+        in: "path"
+        description: "ID of user that to retrieve his audit records"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "contentId"
+        in: "query"
+        description: "Content from we want to limit the audit records"
+        required: false
+        type: "string"
+        format: "date"
+      - name: "status"
+        in: "query"
+        description: "Status of the audit record"
+        required: false
+        type: "string"
+        enum: 
+          - "pending"
+          - "read"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Audit"
+        400:
+          description: "Invalid user ID supplied"
+        404:
+          description: "Audit not found"          
+definitions:
+  Account:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      company:
+        type: "string"
+  AccountDetail:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      company:
+        type: "string"
+      users:
+        type: "array"
+        items:
+          $ref: "#/definitions/UserDetail"            
+  User:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      dateCreation:
+        type: "string"
+        format: "date-time"
+      username:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      email:
+        type: "string"
+      phone:
+        type: "string"
+      status:
+        type: "integer"
+        format: "int32"
+        description: "User Status"
+  UserDetail:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      dateCreation:
+        type: "string"
+        format: "date-time"
+      username:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      email:
+        type: "string"
+      phone:
+        type: "string"
+      status:
+        type: "integer"
+        format: "int32"
+        description: "User Status"        
+      roles:
+        type: "array"
+        items:
+          type: "string"
+          enum:
+            - "traveler"
+            - "manager"
+      trips:
+        type: "array"
+        items:
+          $ref: "#/definitions/Travel"
+      managedUsers:
+        type: "array"
+        items:
+          $ref: "#/definitions/User"           
+  Country:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"        
+  Content:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      dateCreation:
+        type: "string"
+        format: "date-time"
+      dateUpdate:
+        type: "string"
+        format: "date-time"
+      country:
+        type: "integer"
+        format: "int64"
+      text:
+        type: "string"
+      url:
+        type: "string"
+  Audit:
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      dateCreation:
+        type: "string"
+        format: "date-time"
+      dateUpdate:
+        type: "string"
+        format: "date-time"
+      content:
+        type: "integer"
+        format: "int64"
+      user:
+        type: "integer"
+        format: "int64"
+      status:
+        type: "string"
+        enum:
+        - "pending"
+        - "read"
+  Travel:
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      user:
+        type: "integer"
+        format: "int64"        
+      country:
+        type: "integer"
+        format: "int64"        
+      dateStart:
+        type: "string"
+        format: "date-time"
+      dateEnd:
+        type: "string"
+        format: "date-time"

@@ -25,7 +25,7 @@ This command starts two docker compose services:
 - iris-explorer_web [the angular app deployed in a NGIX web server]
 - iris-exploreer_iris [iris 2019.1]
 
-When you have everything up you need to start session in IRIS <http://localhost:52773/csp/sys/%25CSP.Portal.Home.zen> and change the login password. Once you change the password you can access to the Angular app <http://localhost/home> and start exploring IRIS APIs using the user and password you used before
+When you have everything up you need to start session in IRIS <http://localhost:55773/csp/sys/%25CSP.Portal.Home.zen> and change the login password. Once you change the password you can access to the Angular app <http://localhost/home> and start exploring IRIS APIs using the user and password you used before
 
 When you finish your demo then execute:
 
@@ -48,7 +48,8 @@ ng serve --aot --i18nFile=src/locale/messages.es.xlf --i18nFormat=xlf --locale=e
 More help about how to configure i18n here [<https://v5.angular.io/guide/i18n>]
 
 ## Code scaffolding
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6. Using Angular 5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3
+Using Angular 5.2.2
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 

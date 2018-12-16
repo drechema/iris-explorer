@@ -1,0 +1,25 @@
+{
+  "basePath": "/test/api",
+  "info": {
+    "description": "Test REST API for demo",
+    "title": "TestApp",
+    "version": "1.0"
+  },
+  "paths": {
+    "/test": {
+      "get": {
+        "operationId": "getTest",
+        "responses": {
+          "200": {
+            "description": "Test if the system is working"
+          },
+          "default": {
+            "description": "Returns a phone object"
+          }
+        },
+        "summary": "Do a simple test"
+      }
+    }
+  },
+  "swagger": "2.0"
+}

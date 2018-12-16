@@ -22,6 +22,8 @@ export class IrisComponent implements OnInit {
         private apiService: IrisApiService
     ) {
         this.authForm = new FormGroup({
+            'Host': new FormControl('', [Validators.required]),
+            'Port': new FormControl('', [Validators.required]),
             'Username': new FormControl('', [Validators.required]),
             'Password': new FormControl('', [Validators.required])
         });
@@ -48,6 +50,9 @@ export class IrisComponent implements OnInit {
     }
 
     authChanges() {
+        const host = this.authForm.controls['Host'].value;
+        const port = this.authForm.controls['Port'].value;
+        this.apiService.setURL(host, port);
         const username = this.authForm.controls['Username'].value;
         const password = this.authForm.controls['Password'].value;
         this.apiService.setHeaders(username, password);

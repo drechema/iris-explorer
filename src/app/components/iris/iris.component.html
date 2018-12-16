@@ -1,6 +1,16 @@
 <form class="form-horizontal" *ngIf="!apis && show==='auth'" [formGroup]="authForm" (ngSubmit)="authChanges()">
     <div class="row">
         <div class="form-group col-md-4">
+            <label for="host" class="control-label">IRIS Host</label>
+            <input type="text" class="form-control" name="host" formControlName="Host" autocomplete="host">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="port" class="control-label">IRIS web Port</label>
+            <input type="text" class="form-control" name="port" formControlName="Port" autocomplete="port">
+        </div>               
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4">
             <label for="username" class="control-label">Username</label>
             <input type="text" class="form-control" name="username" formControlName="Username" autocomplete="username">
         </div>

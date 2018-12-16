@@ -1,5 +1,10 @@
 import {AfterViewInit, Component, ElementRef, Input, OnChanges} from '@angular/core';
 
+declare global {
+  interface Window { Buffer: any; }
+}
+window.Buffer = window.Buffer || require('buffer').Buffer;
+
 const SwaggerUI = require('swagger-ui');
 
 @Component({
