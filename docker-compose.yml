@@ -9,7 +9,7 @@ services:
       - 80:80
   iris:
     hostname: localhost
-    image: docker.iscinternal.com/intersystems/iris:2019.1.0.284.0
+    image: intersystems/iris:2019.2.0.100.0
     command: --key /shared/license.key
     container_name: iris-explorer_iris
     volumes:
