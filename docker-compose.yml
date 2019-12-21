@@ -9,8 +9,7 @@ services:
       - 80:80
   iris:
     hostname: localhost
-    image: intersystems/iris:2019.2.0.100.0
-    command: --key /shared/license.key
+    image: store/intersystems/iris-community:2019.4.0.383.0
     container_name: iris-explorer_iris
     volumes:
       - ${PWD}/shared/:/shared

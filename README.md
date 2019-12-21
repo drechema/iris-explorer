@@ -7,25 +7,23 @@ There is a nice article explaining the background at InterSystems Developer Comm
 ## Docker
 
 In order to run this app easier I prepared a Docker container for a quick start
-
-### Pre-requisites
-
-- You need a valid license for IRIS. Put it in `./shared` folder
+This IRIS API Explorer docker file is using iris-community:2019.4.0.383.0 from docker store
 
 ### Docker Compose
 
-The project come ready to run on Docker. You have only to execute:
+The project come ready to run on Docker. From the project directory you have only to execute:
 
 ```bash
+doccke-compose build
 docker-compose up -d
 ```
 
 This command starts two docker compose services:
 
 - iris-explorer_web [the angular app deployed in a NGIX web server]
-- iris-exploreer_iris [iris 2019.1]
+- iris-exploreer_iris [iris 2019.4]
 
-When you have everything up you need to start session in IRIS <http://localhost:55773/csp/sys/%25CSP.Portal.Home.zen> and change the login password. Once you change the password you can access to the Angular app <http://localhost/home> and start exploring IRIS APIs using the user and password you used before
+When you have everything up you need to start session in IRIS <http://localhost:55773/csp/sys/%25CSP.Portal.Home.zen> using superuser/SYS and change the login password to a new one. Once you change the password you can access to the Angular app <http://localhost/home> and start exploring IRIS APIs using the IRIS instance up in localhost:55773 and the user and password you used before to access to the IRIS instance 'superuser'.
 
 When you finish your demo then execute:
 
