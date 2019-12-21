@@ -1,5 +1,5 @@
 # Stage 1
-FROM node:8.11.2-alpine as node
+FROM node:8.17.0-alpine3.9 as node
 LABEL maintainer "david.reche@intersystems.com"
 WORKDIR /usr/src/app
 COPY package*.json ./
