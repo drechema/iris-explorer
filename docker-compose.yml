@@ -6,7 +6,8 @@ services:
     image: iris-explorer:v1.1.0
     container_name: iris-explorer_web
     ports:
-      - 80:80
+#      - 80:80
+      - 8000:80
   iris:
     hostname: localhost
 #    image: store/intersystems/iris-community:2019.4.0.383.0
