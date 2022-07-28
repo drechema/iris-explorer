@@ -14,7 +14,7 @@ This IRIS API Explorer docker file is using iris-community:2019.4.0.383.0 from d
 The project come ready to run on Docker. From the project directory you have only to execute:
 
 ```bash
-doccke-compose build
+docker-compose build
 docker-compose up -d
 ```
 
